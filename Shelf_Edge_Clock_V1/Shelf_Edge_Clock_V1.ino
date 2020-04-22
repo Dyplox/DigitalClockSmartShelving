@@ -185,23 +185,12 @@ void displayTheTime(){
   displayNumber(secondMinuteDigit, 63, clockMinuteColour);  
 
 
-  int firstHourDigit = MyDateAndTime.Hour; //work out the value for the third digit and then display it
-  if (firstHourDigit > 12){
-    firstHourDigit = firstHourDigit - 12;
-  }
-  firstHourDigit = firstHourDigit % 10;
+  int firstHourDigit = MyDateAndTime.Hour % 10; //work out the value for the third digit and then display it
   displayNumber(firstHourDigit, 126, clockHourColour);
 
 
   int secondHourDigit = MyDateAndTime.Hour; //work out the value for the fourth digit and then display it
-  if (secondHourDigit > 12){
-    secondHourDigit = secondHourDigit - 12;
-  }
-    if (secondHourDigit > 9){
-      stripClock.fill(clockHourColour,189, 18); 
-    }
-
-  }
+  displayNumber(secondHourDigit, 189, clockHourColour);
 
 
 void displayNumber(int digitToDisplay, int offsetBy, int colourToUse){

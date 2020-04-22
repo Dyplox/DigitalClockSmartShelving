@@ -1,5 +1,6 @@
 # Hidden Digital Clock SMart Shelving
-A DIY, 3d Printed, Arduino powered, time-telling, shelving project.
+A DIY, 3d Printed, Arduino powered, time-telling, shelving project. With 24 hour support.
+
 
 ==========
 
@@ -13,9 +14,9 @@ List of items used in this project and where to find them (the links are Amazon 
 
 ■ A DS3231: https://geni.us/DS3231-RTC
 
-■ Some Hook up wire - ideally three different colours: https://geni.us/22AWGWire 
+■ Some Hook up wire - ideally three different colours: https://geni.us/22AWGWire
 
-■ A couple of 470 Ohm resistors: https://geni.us/Ufa2s 
+■ A couple of 470 Ohm resistors: https://geni.us/Ufa2s
 
 ■ A couple of electric terminal block strips - each 5 blocks long: https://geni.us/TerminalBlocks
 
@@ -28,11 +29,14 @@ List of items used in this project and where to find them (the links are Amazon 
 
 ■ Battery powered glue gun: http://geni.us/BoschBatteryGlueGun
 
-■ Battery powered soldering iron:  http://bit.ly/SealeySDL6 
+■ Battery powered soldering iron:  http://bit.ly/SealeySDL6
 
 ==========
 
 3D printed parts and wiring diagram can be downloaded from here: https://www.thingiverse.com/thing:4207524
+
+This forked version is modified to control four full 7Segment digits.
+This means it can display 20:00 instead of 8:00pm.
 
 ==========
 
@@ -41,7 +45,7 @@ SAY THANKS:
 Buy me a coffee to say thanks: https://ko-fi.com/diymachines
 Support us on Patreon: https://www.patreon.com/diymachines
 
-SUBSCRIBE: 
+SUBSCRIBE:
 ■ https://www.youtube.com/channel/UC3jc4X-kEq-dEDYhQ8QoYnQ?sub_confirmation=1
 
 INSTAGRAM: https://www.instagram.com/diy_machines/?hl=en
