@@ -88,12 +88,12 @@ void setup() {
 
   stripClock.begin();           // INITIALIZE NeoPixel stripClock object (REQUIRED)
   stripClock.show();            // Turn OFF all pixels ASAP
-  stripClock.setBrightness(100); // Set inital BRIGHTNESS (max = 255)
+  stripClock.setBrightness(255); // Set inital BRIGHTNESS (max = 255)
  
 
   stripDownlighter.begin();           // INITIALIZE NeoPixel stripClock object (REQUIRED)
   stripDownlighter.show();            // Turn OFF all pixels ASAP
-  stripDownlighter.setBrightness(50); // Set BRIGHTNESS (max = 255)
+  stripDownlighter.setBrightness(100); // Set BRIGHTNESS (max = 255)
 
   //smoothing
     // initialize all the readings to 0:
@@ -189,7 +189,7 @@ void displayTheTime(){
   displayNumber(firstHourDigit, 126, clockHourColour);
 
 
-  int secondHourDigit = MyDateAndTime.Hour; //work out the value for the fourth digit and then display it
+  int secondHourDigit = floor(MyDateAndTime.Hour/ 10); //work out the value for the fourth digit and then display it
   displayNumber(secondHourDigit, 189, clockHourColour);
 }
   
