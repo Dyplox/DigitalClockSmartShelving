@@ -191,6 +191,8 @@ void displayTheTime(){
 
   int secondHourDigit = MyDateAndTime.Hour; //work out the value for the fourth digit and then display it
   displayNumber(secondHourDigit, 189, clockHourColour);
+}
+  
 
 
 void displayNumber(int digitToDisplay, int offsetBy, int colourToUse){
