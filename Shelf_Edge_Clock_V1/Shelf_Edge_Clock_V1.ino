@@ -151,7 +151,7 @@ void loop() {
   stripClock.show();
 
    //(red * 65536) + (green * 256) + blue ->for 32-bit merged colour value so 16777215 equals white
-  stripDownlighter.fill(16777215, 0, LEDDOWNLIGHT_COUNT);
+  stripDownlighter.fill(16758861, 0, LEDDOWNLIGHT_COUNT);
   stripDownlighter.show();
 
   delay(5000);   //this 5 second delay to slow things down during testing
