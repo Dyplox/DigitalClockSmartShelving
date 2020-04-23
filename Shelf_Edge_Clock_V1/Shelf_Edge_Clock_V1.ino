@@ -53,8 +53,9 @@ DateTime MyDateAndTime;
 #define LEDDOWNLIGHT_COUNT 14
 
   //(red * 65536) + (green * 256) + blue ->for 32-bit merged colour value so 16777215 equals white
-int clockMinuteColour = 51200; //1677
-int clockHourColour = 140000000; //7712
+  //blue color: 3355647
+int clockMinuteColour = 16777215; //1677
+int clockHourColour = 3355647; //7712
 
 int clockFaceBrightness = 0;
 
