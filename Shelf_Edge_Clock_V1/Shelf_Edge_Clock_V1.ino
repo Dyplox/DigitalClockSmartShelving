@@ -49,12 +49,13 @@ DateTime MyDateAndTime;
 #define LEDDOWNLIGHT_PIN    5
 
 // How many NeoPixels are attached to the Arduino?
-#define LEDCLOCK_COUNT 216
-#define LEDDOWNLIGHT_COUNT 12
+#define LEDCLOCK_COUNT 252
+#define LEDDOWNLIGHT_COUNT 14
 
   //(red * 65536) + (green * 256) + blue ->for 32-bit merged colour value so 16777215 equals white
-int clockMinuteColour = 51200; //1677
-int clockHourColour = 140000000; //7712
+  //blue color: 3355647
+int clockMinuteColour = 16777215; //1677
+int clockHourColour = 3355647; //7712
 
 int clockFaceBrightness = 0;
 
@@ -88,12 +89,12 @@ void setup() {
 
   stripClock.begin();           // INITIALIZE NeoPixel stripClock object (REQUIRED)
   stripClock.show();            // Turn OFF all pixels ASAP
-  stripClock.setBrightness(100); // Set inital BRIGHTNESS (max = 255)
+  stripClock.setBrightness(255); // Set inital BRIGHTNESS (max = 255)
  
 
   stripDownlighter.begin();           // INITIALIZE NeoPixel stripClock object (REQUIRED)
   stripDownlighter.show();            // Turn OFF all pixels ASAP
-  stripDownlighter.setBrightness(50); // Set BRIGHTNESS (max = 255)
+  stripDownlighter.setBrightness(100); // Set BRIGHTNESS (max = 255)
 
   //smoothing
     // initialize all the readings to 0:
@@ -150,7 +151,7 @@ void loop() {
   stripClock.show();
 
    //(red * 65536) + (green * 256) + blue ->for 32-bit merged colour value so 16777215 equals white
-  stripDownlighter.fill(16777215, 0, LEDDOWNLIGHT_COUNT);
+  stripDownlighter.fill(16758861, 0, LEDDOWNLIGHT_COUNT);
   stripDownlighter.show();
 
   delay(5000);   //this 5 second delay to slow things down during testing
@@ -185,23 +186,14 @@ void displayTheTime(){
   displayNumber(secondMinuteDigit, 63, clockMinuteColour);  
 
 
-  int firstHourDigit = MyDateAndTime.Hour; //work out the value for the third digit and then display it
-  if (firstHourDigit > 12){
-    firstHourDigit = firstHourDigit - 12;
-  }
-  firstHourDigit = firstHourDigit % 10;
+  int firstHourDigit = MyDateAndTime.Hour % 10; //work out the value for the third digit and then display it
   displayNumber(firstHourDigit, 126, clockHourColour);
 
 
-  int secondHourDigit = MyDateAndTime.Hour; //work out the value for the fourth digit and then display it
-  if (secondHourDigit > 12){
-    secondHourDigit = secondHourDigit - 12;
-  }
-    if (secondHourDigit > 9){
-      stripClock.fill(clockHourColour,189, 18); 
-    }
-
-  }
+  int secondHourDigit = floor(MyDateAndTime.Hour/ 10); //work out the value for the fourth digit and then display it
+  displayNumber(secondHourDigit, 189, clockHourColour);
+}
+  
 
 
 void displayNumber(int digitToDisplay, int offsetBy, int colourToUse){
